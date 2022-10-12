@@ -1,14 +1,12 @@
 <body>
-    <button type="button" id="knop">knop</button>
-    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <h1 id="demo"></h1>
+    <script>
+        getText("https://snellestijn.github.io/chat/db.json");
 
-    <py-script>
-    import json
-
-    with open('db.json','r') as f:
-        json_object = json.loads(f.read())
-
-    print(json_object)
-
-    </py-script>
+        async function getText(file) {
+        let myObject = await fetch(file);
+        let myText = await myObject.text();
+        document.getElementById("demo").innerHTML = myText;
+        }
+    </script>
 </body>
