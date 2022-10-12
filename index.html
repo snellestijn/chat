@@ -3,14 +3,12 @@
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 
     <py-script>
-        import json
-        # some JSON:
-x =  '{ "name":"John", "age":30, "city":"New York"}'
+    import json
 
-# parse x:
-y = json.loads(x)
+    with open('db.json','r') as f:
+        json_object = json.loads(f.read())
 
-# the result is a Python dictionary:
-print(y["age"])
+    print(json_object)
+
     </py-script>
 </body>
